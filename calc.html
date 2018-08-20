@@ -16,7 +16,7 @@
 				multiplier = 1 / 365;
 			}
 			var iaf = ai * p * (per * multiplier);
-			var taf = iaf + p;
+			var taf = iaf + parseFloat(p);
 			document.getElementById("ia").innerHTML = iaf.toFixed(2);
 			document.getElementById("ta").innerHTML = taf;
 			
@@ -26,7 +26,7 @@
 	</head>
 	
 	<body>
-		<h1>Simple Interest Calculator! </h1>
+		<h1>Simple Interest Calculator </h1>
 		<table>
 			<tr>
 				<td>
