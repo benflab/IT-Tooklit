@@ -4,6 +4,7 @@
 		<title>Simple Calc</title>
 		<script type="text/javascript">
 		function calcIn(p, ai, per, pt) {
+			document.getElementById("ta").innerHTML = 0.00;
 			var multiplier = 1;
 			if(pt == "Months"){
 				multiplier = 1 / 12;
@@ -24,7 +25,7 @@
 	</head>
 	
 	<body>
-		<h1>Simple Interest Calculator </h1>
+		<h1>Simple Interest Calculator! </h1>
 		<table>
 			<tr>
 				<td>
