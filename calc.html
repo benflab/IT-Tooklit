@@ -2,6 +2,24 @@
 <html>
 	<head>
 		<title>Simple Calc</title>
+		<script type="text/javascript">
+		function calcIn(p, ai, per, pt) {
+			var multiplier = 1;
+			if(pt == "Months"){
+				multiplier = 1 / 12;
+			}
+			else if(pt == "Weeks"){
+				multiplier = 1 / 72;
+			}
+			else if(pt == "Weeks"){
+				multiplier = 1 / 365;
+			}
+			var iaf = ai * p * (per * multiplier);
+			var taf = (ai * p * (per * multiplier)) + p;
+			document.getElementById("ia").innerHTML = iaf.toFixed(2);
+			document.getElementById("ta").innerHTML = taf.toFixed(2);
+		}
+		</script>
 		<meta charset="UTF-8" />
 	</head>
 	
@@ -63,7 +81,9 @@
 								    
 				</td>
 				<td>
-					 <button onClick = "calcIn()"> Calculate </button> <button> Clear </button>		    
+					 <button onclick = "calcIn(document.getElementById('principal').value
+						, document.getElementById('annualI').value, document.getElementById('period').value, 
+						document.getElementById('periodT').value)"> Calculate </button> <button> Clear </button>		    
 				</td>
 			</tr>
 			<tr>
@@ -71,7 +91,7 @@
 					Interest Amount:	
 				</td>
 				<td>
-					$<input type = "text" name = "ia"> 
+					$<input type = "text" id = "ia" name = "ia"> 
 				</td>
 			</tr>
 			<tr>
@@ -79,30 +99,9 @@
 					Total Amount:	
 				</td>
 				<td>
-					$<input type = "text" name = "ta"> 
+					$<input type = "text" id = "ta" name  = "ta"> 
 				</td>
 			</tr>
 		</table>
-		<script>
-		function calcIn() {
-			var principle = document.getElementById('principle').value;
-			var annualI = document.getElementById('air').value;
-			var multiplier = 1;
-			if(document.getElementById('periodT').value == "Months"){
-				multiplier = 1/12;
-			}
-			else if(document.getElementById('periodT').value == "Weeks"){
-				multiplier = 1/72;
-			}
-			else if(document.getElementById('periodT').value == "Weeks"){
-				multiplier = 1/365;
-			}
-			var period = document.getElementById('period').value * multiplier;
-			var ia = annualI * period * principle;
-			var ta = (annualI * period * principle) + principal;
-			document.getElementById('ia').value = ia;
-			document.getElementById('ta').value = ta;
-		}
-		</script>
 	</body>
 </html>
