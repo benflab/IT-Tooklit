@@ -8,8 +8,7 @@
 	<body>
 		<script>
 		function calcIn() {
-			document.getElementById('ia').innerHTML = "1234";
-			/* var principle = document.getElementById('principle').value;
+			var principle = document.getElementById('principle').value;
 			var annualI = document.getElementById('air').value;
 			var multiplier = 1;
 			if(document.getElementById('periodT').value == "Months")
@@ -19,10 +18,10 @@
 			else if(document.getElementById('periodT').value == "Weeks")
 				multiplier = 1/365;
 			var period = document.getElementById('period').value * multiplier;
-			var ia = (annualI * period);
-			var ta = (annualI * period) + principal;
+			var ia = annualI * period * principle;
+			var ta = (annualI * period * principle) + principal;
 			document.getElementById('ia').value = ia;
-			document.getElementById('ta').value = ta; */
+			document.getElementById('ta').value = ta;
 		}
 		</script>
 		<h1>Simple Interest Calculator! </h1>
