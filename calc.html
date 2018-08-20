@@ -4,6 +4,24 @@
 		<title>Simple Calc</title>
 		<meta charset="UTF-8" />
 	</head>
+	
+	<script>
+		function calcIn() {
+			var principle = document.getElementById('principle').value;
+			var annualI = document.getElementById('air').value;
+			var multiplier = 1;
+			if(document.getElementById('periodT').value == "Months")
+				multiplier = 1/12;
+			else if(document.getElementById('periodT').value == "Weeks")
+				multiplier = 1/72;
+			else if(document.getElementById('periodT').value == "Weeks")
+				multiplier = 1/365;
+			var period = document.getElementById('period').value * multiplier;
+			document.getElementById('ia').value = (annualI * period);
+			document.getElementById('ia').value = (annualI * period) + principal;
+		}
+	</scipt>
+	
 	<body>
 		<table>
 			<tr>
@@ -61,7 +79,7 @@
 								    
 				</td>
 				<td>
-					 <button> Calculate </button> <button> Clear </button>		    
+					 <button onClick = "calcIn()"> Calculate </button> <button> Clear </button>		    
 				</td>
 			</tr>
 			<tr>
