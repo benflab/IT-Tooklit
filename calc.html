@@ -5,6 +5,7 @@
 		<meta charset="UTF-8" />
 	</head>
 	
+	<body>
 	<script>
 		function calcIn() {
 			var principle = document.getElementById('principle').value;
@@ -17,12 +18,12 @@
 			else if(document.getElementById('periodT').value == "Weeks")
 				multiplier = 1/365;
 			var period = document.getElementById('period').value * multiplier;
-			document.getElementById('ia').value = (annualI * period);
-			document.getElementById('ia').value = (annualI * period) + principal;
+			var ia = (annualI * period);
+			var ta = (annualI * period) + principal;
+			document.getElementById('ia').value = ia.;
+			document.getElementById('ta').value = ;
 		}
 	</scipt>
-	
-	<body>
 		<table>
 			<tr>
 				<td>
