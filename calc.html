@@ -11,7 +11,7 @@
 					Select Currency:
 				</td>
       				<td>
-					<select>
+					<select id = "Currency">
         					<option value="Dollar">Dollar</option>
         					<option value="Pound">Pound</option>
         					<option value="Euro">Euro</option>
@@ -25,7 +25,18 @@
 				</td>
 				<td>
 					<input type = "number" id = "principal" name = "principal"
-					       placeholder = "1000" increments = "100 /">
+					       placeholder = "1000"/">
+					<button onclick="document.getElementById('principal').value = ''">X</button
+					
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Annual interest rate:	
+				</td>
+				<td>
+					<input type = "air" id = "air" name = "air"
+					       placeholder = "5"/">
 					
 				</td>
 			</tr>
