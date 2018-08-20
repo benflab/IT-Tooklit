@@ -21,19 +21,32 @@
 			document.getElementById("ta").innerHTML = taf;
 			
 		}
+			
+		function currencySel(c) {
+			if (c == "Dollar"){
+				document.getElementById("cShow1").innerHTML = "$";
+			} else if (c == "Pound"){
+				document.getElementById("cShow1").innerHTML = "£";
+			} else if (c == "Euro") {
+				document.getElementById("cShow1").innerHTML = "€";
+			} else if (c === "Krona") {
+				document.getElementById("cShow1").innerHTML = "kr";
+			}
+		}
+			
 		</script>
 		<meta charset="UTF-8" />
 	</head>
 	
 	<body>
-		<h1>Simple Interest Calculator </h1>
+		<h1>Simple Interest Calculator! </h1>
 		<table>
 			<tr>
 				<td>
 					Select Currency:
 				</td>
       				<td>
-					<select id = "Currency">
+					<select id = "Currency" id = "currency" onClick = "currencySel(document.getElementById("currency"))">
         					<option value="Dollar">Dollar</option>
         					<option value="Pound">Pound</option>
         					<option value="Euro">Euro</option>
@@ -46,6 +59,7 @@
 					Principal Amount	
 				</td>
 				<td>
+					<a id = "cShow1"> $ </a>
 					<input type = "number" id = "principal" name = "principal"
 					       placeholder = "1000"/>
 					<button onclick="document.getElementById('principal').value = ''">X</button>
