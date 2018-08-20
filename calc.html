@@ -6,25 +6,7 @@
 	</head>
 	
 	<body>
-		<script>
-		function calcIn() {
-			var principle = document.getElementById('principle').value;
-			var annualI = document.getElementById('air').value;
-			var multiplier = 1;
-			if(document.getElementById('periodT').value == "Months")
-				multiplier = 1/12;
-			else if(document.getElementById('periodT').value == "Weeks")
-				multiplier = 1/72;
-			else if(document.getElementById('periodT').value == "Weeks")
-				multiplier = 1/365;
-			var period = document.getElementById('period').value * multiplier;
-			var ia = annualI * period * principle;
-			var ta = (annualI * period * principle) + principal;
-			document.getElementById('ia').value = ia;
-			document.getElementById('ta').value = ta;
-		}
-		</script>
-		<h1>Simple Interest Calculator! </h1>
+		<h1>Simple Interest Calculator </h1>
 		<table>
 			<tr>
 				<td>
@@ -101,5 +83,23 @@
 				</td>
 			</tr>
 		</table>
+		<script>
+		function calcIn() {
+			var principle = document.getElementById('principle').value;
+			var annualI = document.getElementById('air').value;
+			var multiplier = 1;
+			if(document.getElementById('periodT').value == "Months")
+				multiplier = 1/12;
+			else if(document.getElementById('periodT').value == "Weeks")
+				multiplier = 1/72;
+			else if(document.getElementById('periodT').value == "Weeks")
+				multiplier = 1/365;
+			var period = document.getElementById('period').value * multiplier;
+			var ia = annualI * period * principle;
+			var ta = (annualI * period * principle) + principal;
+			document.getElementById('ia').value = ia;
+			document.getElementById('ta').value = ta;
+		}
+		</script>
 	</body>
 </html>
