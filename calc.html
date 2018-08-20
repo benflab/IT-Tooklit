@@ -88,12 +88,15 @@
 			var principle = document.getElementById('principle').value;
 			var annualI = document.getElementById('air').value;
 			var multiplier = 1;
-			if(document.getElementById('periodT').value == "Months")
+			if(document.getElementById('periodT').value == "Months"){
 				multiplier = 1/12;
-			else if(document.getElementById('periodT').value == "Weeks")
+			}
+			else if(document.getElementById('periodT').value == "Weeks"){
 				multiplier = 1/72;
-			else if(document.getElementById('periodT').value == "Weeks")
+			}
+			else if(document.getElementById('periodT').value == "Weeks"){
 				multiplier = 1/365;
+			}
 			var period = document.getElementById('period').value * multiplier;
 			var ia = annualI * period * principle;
 			var ta = (annualI * period * principle) + principal;
