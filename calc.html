@@ -2,7 +2,24 @@
 <html>
 	<head>
 		<title>Simple Calc</title>
-		
+		<script type="text/javascript">
+		function calcIn(p, ai, per, pt) {
+			var multiplier = 1;
+			if(pt == "Months"){
+				multiplier = 1 / 12;
+			}
+			else if(pt == "Weeks"){
+				multiplier = 1 / 72;
+			}
+			else if(pt == "Days"){
+				multiplier = 1 / 365;
+			}
+			var iaf = ai * p * (per * multiplier);
+			var taf = iaf + p;
+			document.getElementById("ia").innerHTML = iaf.toFixed(2);
+			document.getElementById("ta").innerHTML = taf.toFixed(2);
+		}
+		</script>
 		<meta charset="UTF-8" />
 	</head>
 	
@@ -63,24 +80,6 @@
 								    
 				</td>
 				<td>
-					<script type="text/javascript">
-		function calcIn(p, ai, per, pt) {
-			var multiplier = 1;
-			if(pt == "Months"){
-				multiplier = 1 / 12;
-			}
-			else if(pt == "Weeks"){
-				multiplier = 1 / 72;
-			}
-			else if(pt == "Days"){
-				multiplier = 1 / 365;
-			}
-			var iaf = ai * p * (per * multiplier);
-			var taf = iaf + p;
-			document.getElementById("ia").innerHTML = iaf.toFixed(2);
-			document.getElementById("ta").innerHTML = taf.toFixed(2);
-		}
-		</script>
 					 <button onclick = "calcIn(document.getElementById('principal').value
 						, document.getElementById('air').value * .01, document.getElementById('period').value, 
 						document.getElementById('periodT').value);"> Calculate </button> 
@@ -100,7 +99,7 @@
 					Total Amount:	
 				</td>
 				<td id = "ta">
-				
+					
 				</td>
 			</tr>
 		</table>
