@@ -15,7 +15,7 @@
 				multiplier = 1 / 365;
 			}
 			var iaf = ai * p * (per * multiplier);
-			var taf = (ai * p * (per * multiplier)) + p;
+			var taf = iaf + p;
 			document.getElementById("ia").innerHTML = iaf.toFixed(2);
 			document.getElementById("ta").innerHTML = taf.toFixed(2);
 		}
